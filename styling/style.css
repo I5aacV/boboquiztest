@@ -18,8 +18,7 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    max-width: 600px;
-    width: 100%;
+    max-width: 375px;
     border: 1px solid #eee;
     margin-top: 20px;
     transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility changes */
