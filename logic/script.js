@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     class QuizGame {
         constructor() {
             console.log('Initializing QuizGame instance...');
-            this.introContainer = document.getElementById('intro-container');
-            this.emailSignupContainer = document.getElementById('email-signup-container');
             this.quizContainer = document.getElementById('quiz-container');
             this.questionElement = document.getElementById('question');
             this.answerButtonsElement = document.getElementById('answer-buttons');
@@ -20,27 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
             this.roommateTypeDescriptions = window.roommateTypeDescriptions;
 
             this.setupEventListeners();
+            this.startQuiz(); // Automatically start the quiz when QuizGame instance is initialized
         }
 
         setupEventListeners() {
             console.log('Setting up event listeners...');
-            document.getElementById('begin-quiz-btn').addEventListener('click', () => {
-                console.log('Begin quiz button clicked.');
-                this.introContainer.classList.add('hidden');
-                this.emailSignupContainer.classList.remove('hidden');
-            });
-
-            document.getElementById('email-signup-form').addEventListener('submit', (event) => {
-                console.log('Email signup form submitted.');
-                event.preventDefault();
-                this.userName = document.getElementById('name-input').value.trim();
-                if (this.userName === '') {
-                    alert('Please enter your name.');
-                    return;
-                }
-                this.emailSignupContainer.classList.add('hidden');
-                this.startQuiz();
-            });
+            // Event listeners can be added here if needed
         }
 
         startQuiz() {
